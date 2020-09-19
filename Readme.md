@@ -99,7 +99,7 @@ From your raspberry pi command line:
 $ sudo apt install git-all
 
 # clone the repository
-$ git clone https://github.com/utaresearch/RealPi2dDIC
+$ git clone https://github.com/utaresearch/RealPi2dDIC.git
 
 # change directory to RealPi2dDIC
 # letter case matters
