@@ -5,7 +5,7 @@
 
 -----
 
-Digital Image Correlation (DIC) is a non-contact optical technique that can be used to monitor the shape, deformation and motion of rigid objects. Here we present *RealPi2dDIC*, a Python based open source real time DIC software, which provides a solution to the real time DIC applications using a very low-cost and mobile hardware interface. It can effectively compute in-plane full-field surface displacement and strain to sub-pixel accuracy by continuously capturing images of any rigid body in motion using a Pi camera module. This program is simple to use and can come up with high quality DIC results.
+Digital Image Correlation (DIC) is a non-contact optical technique that can be used to monitor the shape, deformation and motion of rigid objects. Here we present *RealPi2dDIC*, a Python based open source real time DIC software, which provides a solution to the real time DIC applications using a very low-cost and mobile hardware interface. It can effectively compute in-plane full-field surface displacement and strain to sub-pixel accuracy by continuously capturing images of any rigid body in motion using a Pi camera module. This program is simple to use and can come up with highly accurate DIC results.
 
 The application of Real Time DIC is limitless. To express it in a nutshell, this prevalent method can be used to get full field displacement and strain data of any rigid structure under tensile or compressive loading. It can be used in:
 
@@ -16,13 +16,13 @@ The application of Real Time DIC is limitless. To express it in a nutshell, this
 
 It also has the potential to be the viable alternative of manual inspection techniques of large civil engineering structures like buildings and power generation infrastructures and this list goes on.
 
-As, the computation of gradual displacement from image data takes enormous amount of computational capability of the hardware interface, typically commercial in-situ DIC measurement equipment are very costly. Mostly a number of commercial vendors provide such services which are not relatively affordable for most laboratories or companies. Hereby, we have developed this low-cost approach to in-situ DIC, which uses a *Raspberry Pi system (35$)* and a *Pi camera module v2 (30$)* to capture images and process them in an efficient algorithm to produce quality in-plane DIC measurements. This can be used in any indoor or outdoor applications and can be controlled remotely, thanks to the form factor of Raspberry Pi and its camera module. To add to this value, the program can be developed more to comply with more the powerful nVidia Jetson NX or similar single board computers and Digital SLR cameras for faster computation.
+As, the computation of gradual displacement from image data requires enormous amount of computational capability of the hardware interface, typically commercial in-situ DIC measurement equipment are very costly. Mostly a number of commercial vendors provide such services which are not relatively affordable for most research groups and companies. Hereby, we have developed this low-cost approach to in-situ DIC, which uses a *Pi camera module v2 (30$)* and a *Raspberry Pi system (35$)* to capture images and process them in an efficient algorithm to produce quality in-plane DIC measurements. This can be used in any indoor or outdoor applications and can be controlled remotely, thanks to the form factor of Raspberry Pi and its camera module. To add to its value, the program can be developed more to comply with nVidia Jetson NX or similar single board computers and Digital SLR cameras for faster computation.
 
 ## How to use?
 
 ## Surface Preparation
 
-The basic operation of DIC is nothing but tracking a unique pattern, namely [Speckle Pattern](https://www.osti.gov/servlets/purl/1408942), on the object surface. Creation of speckle pattern is easy but it has to be good as the results completely depend on the quality of this pattern. In order to provide unique information to track every data point or subset, the pattern should be non-repetitive, isotropic and high contrast. The following qualities- the pattern must have:
+The basic operation of DIC is nothing but tracking a unique pattern, namely [Speckle Pattern](https://www.osti.gov/servlets/purl/1408942), on the object surface. Creation of speckle pattern is easy but it has to be good as the results significantly depend on the quality of this pattern. In order to provide unique information to track every data point or subset, the pattern should be non-repetitive, isotropic and of high contrast. The following qualities- the pattern must have:
 
 - The pattern should be random, should not have a bias in any specific orientation
 - Speckles should be 3-5 pixels in size to optimize spatial resolution and should be consistent
@@ -53,7 +53,7 @@ Considerations regarding applying spray paints include:
 - Black spray should only be used after the white paint is dried. If the base coat is wet, the white and black colors may get mixed and create grey color spots which will affect the accuracy of the results
 - To create small speckles, the spray mist should be farther away from the specimen and stream should be moved continuously across the specimen.
 
-For much smaller scale samples, toner powder, carbon black or graphite powder can be used. For very large-scale applications, like civil structures, one can literally print each dot and the dots will be huge compared to the position of the camera and size of the structure. You can Know more about the types of speckle patterns and application [here](https://www.correlatedsolutions.com/support/index.php?/Knowledgebase/Article/GetAttachment/80/14750) provided by Correlated Solutions Ltd.
+For much smaller scale samples, toner powder, carbon black or graphite powder can be used. For very large-scale applications, like civil structures, one can literally print each dot and the dots can be huge compared to the position of the camera and size of the structure. You can Know more about the types of speckle patterns and application [here](https://www.correlatedsolutions.com/support/index.php?/Knowledgebase/Article/GetAttachment/80/14750) provided by Correlated Solutions Ltd.
 
 ## Hardware Setup
 
@@ -105,7 +105,7 @@ $ git clone https://github.com/utaresearch/RealPi2dDIC.git
 # letter case matters
 $ cd RealPi2dDIC
 
-# run with Python 3
+# run with Python 3 from the ./src/ directory
 # try `python3` instead of `python` if the following does not work
 $ python RealPi2dDIC.py
 ```
@@ -153,7 +153,7 @@ Figure: In-situ true strain field of a specimen at different time of a quasi-sta
 
 ## Documentation & Theory
 
-Documentation can be found [here](https://utaresearch.github.io/RealPi2dDIC/RealPi2dDIC.html). The theory and algorithm of the code is explained in a journal article (to be submitted for review soon)
+Documentation can be found [here](https://utaresearch.github.io/RealPi2dDIC/docs.html). The theory and algorithm of the code is explained in a journal article (to be submitted for review soon)
 
 ## Contributing
 
@@ -178,7 +178,6 @@ You can fork the RealPi2dDIC repo, develop new algorithms and send us a pull req
   vamsee.vadlamudi@uta.edu
 
 - Kenneth Reifsnider - *Founding Director, Institute of Predictive Performance and Methodologies, University of Texas at Arlington Research Institute* 
-
   kenneth.reifsnider@uta.edu
 
 ## Acknowledgements
@@ -194,14 +193,3 @@ For any bug reporting and suggestions, please reach out to parthapratim.das@mavs
 ## License
 
 This software is licensed under the MIT License. See LICENSE.md for more details.
-
-
-
-
-
-
-
-
-
-
-
