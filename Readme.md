@@ -153,7 +153,7 @@ Figure: In-situ true strain field of a specimen at different time of a quasi-sta
 
 ## Documentation & Theory
 
-Documentation can be found [here](https://utaresearch.github.io/RealPi2dDIC/). The theory and algorithm of the code is explained in a journal article (to be submitted for review soon)
+Documentation can be found [here](https://utaresearch.github.io/RealPi2dDIC/RealPi2dDIC.html). The theory and algorithm of the code is explained in a journal article (to be submitted for review soon)
 
 ## Contributing
 
