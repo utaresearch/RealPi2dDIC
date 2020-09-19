@@ -1,0 +1,1954 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.8.4" />
+<title>RealPi2dDIC API documentation</title>
+<meta name="description" content="RealPi2dDIC is a free and open source Digital Image Correlation software which generates in-situ two dimensional strain field of any structure under …" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">OSP <code>RealPi2dDIC</code></h1>
+</header>
+<section id="section-intro">
+<p>RealPi2dDIC is a free and open source Digital Image Correlation software which generates in-situ two dimensional strain field of any structure under loading. This software while
+running captures images using a Picamera v2 module, registers the image data, correlates with a reference image using computer vision. This software is based
+on Lucas-Kanade Method, a well established technique for measurement of optical flow based upon image correlation. It returns the local strain field over a
+region of interest selected by the user in both x and y directions.</p>
+<p>To know about the operational prcedures, please read Readme.md</p>
+<p>This software is developed at the Institute of Predictive Performance Methodologies (IPPM), Univerisity of Texas at Arlington
+Research Institute (UTARI), Texas, USA.</p>
+<p>Authors: Partha Pratim Das [parthapratim.das@mavs.uta.edu] , Muthu Ram Prabhu Elenchezhian, Md Rassel Raihan [mdrassel.raihan@uta.edu], Vamsee Vadlamudi, Kenneth Reifsnider</p>
+<p>This is a free software. It can be distributed/modified under the terms of MIT Licence. See the LICENSE.md file for more details.</p>
+<p>Modules Dependencies:
+i. picamera
+ii. opencv-python
+iii. numpy
+iv. scipy
+v. matplotlib</p>
+<p>Hardware Dependencies:
+i. Raspberry Pi + Raspbian OS
+ii. Picamera Module v2</p>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+&#39;&#39;&#39;
+RealPi2dDIC is a free and open source Digital Image Correlation software which generates in-situ two dimensional strain field of any structure under loading. This software while
+running captures images using a Picamera v2 module, registers the image data, correlates with a reference image using computer vision. This software is based
+on Lucas-Kanade Method, a well established technique for measurement of optical flow based upon image correlation. It returns the local strain field over a
+region of interest selected by the user in both x and y directions.
+
+To know about the operational prcedures, please read Readme.md
+
+This software is developed at the Institute of Predictive Performance Methodologies (IPPM), Univerisity of Texas at Arlington
+Research Institute (UTARI), Texas, USA.
+
+Authors: Partha Pratim Das [parthapratim.das@mavs.uta.edu] , Muthu Ram Prabhu Elenchezhian, Md Rassel Raihan [mdrassel.raihan@uta.edu], Vamsee Vadlamudi, Kenneth Reifsnider
+
+This is a free software. It can be distributed/modified under the terms of MIT Licence. See the LICENSE.md file for more details.
+
+Modules Dependencies:
+i. picamera
+ii. opencv-python
+iii. numpy
+iv. scipy
+v. matplotlib
+
+Hardware Dependencies:
+i. Raspberry Pi + Raspbian OS
+ii. Picamera Module v2
+&#39;&#39;&#39;
+
+import time
+import math
+import glob
+import copy
+import os
+import shutil
+import keyboard
+
+import numpy as np
+import cv2
+from matplotlib import pyplot as plt
+import scipy.interpolate
+import picamera
+camera = picamera.PiCamera()
+
+surface_grid = []  # points on surface are stored in this array
+# correlation window size (in pixels) for Lucas Kanade Method for optical
+# flow measurement
+lk_window_size = (65, 65)
+# the size in pixel of the interval (dx,dy) of the correlation grid
+lk_grid_size = (10, 10)
+area = []
+cropping = False
+
+
+class grid:
+    &#34;&#34;&#34;A class used for many important features starting from
+    capturing photos to image correlation and processing rawdata.&#34;&#34;&#34;
+
+    def __init__(self, Points_X, Points_Y, size_x, size_y):
+        &#34;&#34;&#34;
+        This generates new grid object with x coordinate (Points_X)
+        y coordinate (Points_Y), number of point along x (size_x) and
+        number of point along y (size_y)&#34;&#34;&#34;
+
+        self.Points_X = Points_X
+        self.Points_Y = Points_Y
+        self.size_x = size_x
+        self.size_y = size_y
+        self.disp_x = self.Points_X.copy().fill(0.)
+        self.disp_y = self.Points_Y.copy().fill(0.)
+        self.strain_longitudinal = None
+        self.strain_transverse = None
+        self.strain_xy = None
+
+    def init_Raw_Data(self, winsize, reference_image, image, reference_point,
+                      correlated_point, disp):
+        &#34;&#34;&#34;Saves raw image data using opencv to current grid object&#34;&#34;&#34;
+
+        self.winsize = winsize
+        self.reference_image = reference_image
+        self.image = image
+        self.reference_point = reference_point
+        self.correlated_point = correlated_point
+        self.disp = disp
+
+    def directory_Name(self, prefix, extension):
+        &#34;&#34;&#34;Makes specific directories for storing specific results including
+        surface image, grid displacement, raw data in CSV format&#34;&#34;&#34;
+
+        folder = os.path.dirname(self.image)
+        folder = folder + &#39;/rawdata/&#39; + prefix
+        if not os.path.exists(folder):
+            os.makedirs(folder)
+        base = os.path.basename(self.image)
+        name = folder + &#39;/&#39; + \
+            os.path.splitext(base)[0] + &#39;_&#39; + prefix + &#39;.&#39; + extension
+        return name
+
+    def save_Points(self, pref, poInt):
+        &#34;&#34;&#34;saves correlated points and reference points array to a txt file &#34;&#34;&#34;
+        folderLocation = os.path.dirname(self.image)
+        folderLocation = folderLocation + &#39;/rawdata/%s&#39; % pref
+        if not os.path.exists(folderLocation):
+            os.makedirs(folderLocation)
+        num = os.path.splitext(os.path.basename(self.image))[0]
+        np.savetxt(&#39;%s/%s_%s.txt&#39; % (folderLocation, pref, num),
+                   poInt,
+                   delimiter=&#39;,&#39;)
+
+    def correlation_Image(self):
+        &#34;&#34;&#34;Draws image correlation data points on reference image for each data point&#34;&#34;&#34;
+
+        name = self.directory_Name(&#39;marker&#39;, &#39;png&#39;)
+        display_Image(self.image,
+                      point=self.correlated_point,
+                      l_color=(0, 120, 255),
+                      p_color=(140, 130, 0),
+                      file_Name=name,
+                      text=name)
+        self.save_Points(&#39;correlatedPoints&#39;, self.correlated_point)
+
+    def displacement_Image(self, scale):
+        &#34;&#34;&#34;Draws displacement image on reference image for each data point.
+        Parameters
+        ----------
+        scale : int
+             to amplify the displacement
+        &#34;&#34;&#34;
+
+        name = self.directory_Name(&#39;disp&#39;, &#39;png&#39;)
+        display_Image(self.reference_image,
+                      point=self.reference_point,
+                      pointf=self.correlated_point,
+                      l_color=(125, 0, 125),
+                      p_color=(125, 125, 125),
+                      scale=scale,
+                      file_Name=name,
+                      text=name)
+        self.save_Points(&#39;DisplacementPoints&#39;, self.reference_point)
+
+    def surface_Image(self, scale):
+        &#34;&#34;&#34;Draws mesh deformations on reference image for each data point.
+        Parameters
+        ----------
+        scale : int
+             to amplify the deformation
+        &#34;&#34;&#34;
+        name = self.directory_Name(&#39;surface&#39;, &#39;png&#39;)
+        display_Image(self.reference_image,
+                      grid=self,
+                      scale=scale,
+                      surfColor=(255, 0, 250),
+                      file_Name=name,
+                      text=name)
+
+    def raw_Data_CSV(self):
+        &#34;&#34;&#34;writes a csv file for displacement, strain and other parameters.
+        This data can be used for post processing&#34;&#34;&#34;
+
+        name = self.directory_Name(&#39;result&#39;, &#39;csv&#39;)
+        f = open(name, &#39;w&#39;)
+        f.write(&#34;index&#34; + &#39;,&#39; + &#34;index_x&#34; + &#39;,&#39; + &#34;index_y&#34; + &#39;,&#39; + &#34;x (px)&#34; +
+                &#39;,&#39; + &#34;y (px)&#34; + &#39;,&#39; + &#34;x_Displacement&#34; + &#39;,&#39; +
+                &#34;y_Displacement&#34; + &#39;,&#39; + &#34;x_Strain&#34; + &#39;,&#39; + &#34;y_Strain&#34; + &#39;,&#39; +
+                &#34;xy_Strain&#34; + &#39;\n&#39;)
+        index = 0
+        for i in range(self.size_x):
+            for j in range(self.size_y):
+                f.write(
+                    str(index) + &#39;,&#39; + str(i) + &#39;,&#39; + str(j) + &#39;,&#39; +
+                    str(self.Points_X[i, j]) + &#39;,&#39; + str(self.Points_Y[i, j]) +
+                    &#39;,&#39; + str(self.disp_x[i, j]) + &#39;,&#39; +
+                    str(self.disp_y[i, j]) + &#39;,&#39; + str(self.strain_longitudinal[i, j]) +
+                    &#39;,&#39; + str(self.strain_transverse[i, j]) + &#39;,&#39; +
+                    str(self.strain_xy[i, j]) + &#39;\n&#39;)
+                index = index + 1
+        f.close()
+
+    def insitu_Plot(self, field, title, fig_No, img_file_Name):
+        &#34;&#34;&#34;Connects with Plot Class. Plots in-situ strain field using matplotlib interactive mapping&#34;&#34;&#34;
+
+        img_folder = &#39;./Test_%s/*.jpg&#39; % img_file_Name
+        img_listt = sorted(glob.glob(img_folder),
+                           key=lambda t: os.stat(t).st_mtime)
+        image_ref = cv2.imread(img_listt[0], 0)
+        Plot(image_ref, self, field, title, fig_No)
+
+    def bivariate_Interpolation(self, point, disp, *args, **kwargs):
+        &#34;&#34;&#34;Interpolates the displacement field. Bivariate B-spline interpolation algorithm from scipy is used here.
+        for no interpolation option this can use raw method&#34;&#34;&#34;
+
+        dx = np.array([d[0] for d in disp])
+        dy = np.array([d[1] for d in disp])
+        method = &#39;raw&#39; if &#39;method&#39; not in kwargs else kwargs[&#39;method&#39;]
+        if method == &#39;raw&#39;:
+            self.disp_x = self.Points_X.copy()
+            self.disp_y = self.Points_Y.copy()
+            count = 0
+            for i in range(self.disp_x.shape[0]):
+                for j in range(self.disp_x.shape[1]):
+                    self.disp_x[i, j] = dx[count]
+                    self.disp_y[i, j] = dy[count]
+                    count = count + 1
+
+        elif method == &#39;bivar_Spline&#39;:
+            tck_x = scipy.interpolate.bisplrep(self.Points_X,
+                                               self.Points_Y,
+                                               dx,
+                                               kx=5,
+                                               ky=5)
+            self.disp_x = scipy.interpolate.bisplev(self.Points_X[:, 0],
+                                                    self.Points_Y[0, :], tck_x)
+            tck_y = scipy.interpolate.bisplrep(self.Points_X,
+                                               self.Points_Y,
+                                               dy,
+                                               kx=5,
+                                               ky=5)
+            self.disp_y = scipy.interpolate.bisplev(self.Points_X[:, 0],
+                                                    self.Points_Y[0, :], tck_y)
+
+    def strain_Field_Compute(self):
+        &#34;&#34;&#34;Computes Green-Langragian strain field from interpolated displacement data using numpy&#34;&#34;&#34;
+
+        dx = self.Points_X[1][0] - self.Points_X[0][0]
+        dy = self.Points_Y[0][1] - self.Points_Y[0][0]
+
+        strain_longitudinal, strain_xy = np.gradient(
+            self.disp_x, dx, dy, edge_order=2)
+        strain_yx, strain_transverse = np.gradient(
+            self.disp_y, dx, dy, edge_order=2)
+
+        self.strain_longitudinal = strain_longitudinal + .5 * \
+            (np.power(strain_longitudinal, 2) + np.power(strain_xy, 2))
+        self.strain_transverse = strain_transverse + .5 * \
+            (np.power(strain_transverse, 2) + np.power(strain_yx, 2))
+        self.strain_xy = .5 * (strain_xy + strain_yx + strain_longitudinal * strain_xy +
+                               strain_yx * strain_transverse)
+
+
+class Plot:
+    &#34;&#34;&#34; Plot class includes all the required operations for interactive plotting of strain field data on the reference image
+    using matplotlib &#34;&#34;&#34;
+
+    def __init__(self, image, grid, data, title, fig):
+        self.data = np.ma.masked_invalid(data)
+        self.data_copy = np.copy(self.data)
+        self.Points_X = grid.Points_X
+        self.Points_Y = grid.Points_Y
+        self.data = np.ma.array(self.data, mask=self.data == np.nan)
+
+        self.fig = plt.figure(fig)
+        plt.clf()
+        self.ax = self.fig.add_subplot(111)
+        self.fig.subplots_adjust(left=0.15, bottom=0.05, right=0.95, top=1.00)
+
+        self.ax.imshow(image, cmap=&#39;Greys&#39;)
+
+        self.im = self.ax.contourf(grid.Points_X,
+                                   grid.Points_Y,
+                                   self.data,
+                                   50,
+                                   cmap=&#39;rainbow&#39;,
+                                   alpha=0.75)
+
+        self.ax.set_title(title)
+        self.ax.set_ylabel(&#39;Height (Pixels)&#39;)
+        self.ax.set_xlabel(&#39;Width (Pixels)&#39;)
+        self.cb = self.fig.colorbar(self.im)
+
+
+def surface_Generate(area, num_point, *args, **kwargs):
+    &#34;&#34;&#34;Generates a surface grid using points from region of interest&#34;&#34;&#34;
+
+    xmin = area[0][0]
+    xmax = area[1][0]
+    dx = xmax - xmin
+    ymin = area[0][1]
+    ymax = area[1][1]
+    dy = ymax - ymin
+    point_surface = dx * dy / num_point
+    point_line = math.sqrt(point_surface)
+    ratio = 1. if &#39;ratio&#39; not in kwargs else kwargs[&#39;ratio&#39;]
+    num_x = int(ratio * dx / point_line) + 1
+    num_y = int(ratio * dy / point_line) + 1
+    Points_X, Points_Y = np.mgrid[xmin:xmax:num_x * 1j, ymin:ymax:num_y * 1j]
+    return grid(Points_X, Points_Y, num_x, num_y)
+
+
+def display_Image(image, *args, **kwargs):
+    &#34;&#34;&#34;Draws opencv images for raw data visualization
+    Parameters
+    ----------
+    - point : np.array
+    - p_color : (r,g,b) value
+         arg to choose the color of point
+    - pointf : np.array
+         draw lines between point and pointf
+    - l_color : (r,g,b) value
+         arg to choose the color of lines
+    - grid : to display a grid, the grid must be a grid object
+    - surfColor : to choose the grid color&#34;&#34;&#34;
+
+    if isinstance(image, str):
+        image = cv2.imread(image, 0)
+
+    if &#39;text&#39; in kwargs:
+        text = kwargs[&#39;text&#39;]
+        image = cv2.putText(image, text, (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 1,
+                            (255, 255, 255), 4)
+
+    frame = cv2.cvtColor(image, cv2.COLOR_GRAY2BGR)
+    if &#39;point&#39; in kwargs:
+        p_color = (160, 120,
+                   0) if &#39;p_color&#39; not in kwargs else kwargs[&#39;p_color&#39;]
+        for pt in kwargs[&#39;point&#39;]:
+            if not np.isnan(pt[0]) and not np.isnan(pt[1]):
+                x = int(pt[0])
+                y = int(pt[1])
+                frame = cv2.circle(frame, (x, y), 4, p_color, -1)
+
+    scale = 1. if &#39;scale&#39; not in kwargs else kwargs[&#39;scale&#39;]
+    if &#39;pointf&#39; in kwargs and &#39;point&#39; in kwargs:
+        assert len(kwargs[&#39;point&#39;]) == len(kwargs[&#39;pointf&#39;]), &#39;bad size&#39;
+        l_color = (255, 120,
+                   255) if &#39;l_color&#39; not in kwargs else kwargs[&#39;l_color&#39;]
+        for i, pt0 in enumerate(kwargs[&#39;point&#39;]):
+            pt1 = kwargs[&#39;pointf&#39;][i]
+            if np.isnan(
+                pt0[0]) == False and np.isnan(
+                pt0[1]) == False and np.isnan(
+                pt1[0]) == False and np.isnan(
+                    pt1[1]) == False:
+                disp_x = (pt1[0] - pt0[0]) * scale
+                disp_y = (pt1[1] - pt0[1]) * scale
+                frame = cv2.line(frame, (pt0[0], pt0[1]),
+                                 (int(pt0[0] + disp_x), int(pt0[1] + disp_y)),
+                                 l_color, 2)
+
+    if &#39;grid&#39; in kwargs:
+        gr = kwargs[&#39;grid&#39;]
+        surfColor = (255, 255,
+                     255) if &#39;surfColor&#39; not in kwargs else kwargs[&#39;surfColor&#39;]
+        for i in range(gr.size_x):
+            for j in range(gr.size_y):
+                if (not math.isnan(gr.Points_X[i, j]) and
+                        not math.isnan(gr.Points_Y[i, j]) and
+                        not math.isnan(gr.disp_x[i, j]) and
+                        not math.isnan(gr.disp_y[i, j])):
+                    x = int(gr.Points_X[i, j]) + int(gr.disp_x[i, j] * scale)
+                    y = int(gr.Points_Y[i, j]) + int(gr.disp_y[i, j] * scale)
+
+                    if i &lt; (gr.size_x - 1):
+                        if (not math.isnan(gr.Points_X[i + 1, j]) and
+                                not math.isnan(gr.Points_Y[i + 1, j]) and
+                                not math.isnan(gr.disp_x[i + 1, j]) and
+                                not math.isnan(gr.disp_y[i + 1, j])):
+                            x1 = int(gr.Points_X[i + 1, j]) + \
+                                int(gr.disp_x[i + 1, j] * scale)
+                            y1 = int(gr.Points_Y[i + 1, j]) + \
+                                int(gr.disp_y[i + 1, j] * scale)
+                            frame = cv2.line(
+                                frame, (x, y), (x1, y1), surfColor, 2)
+
+                    if j &lt; (gr.size_y - 1):
+                        if (not math.isnan(gr.Points_X[i, j + 1]) and
+                                not math.isnan(gr.Points_Y[i, j + 1]) and
+                                not math.isnan(gr.disp_x[i, j + 1]) and
+                                not math.isnan(gr.disp_y[i, j + 1])):
+                            x1 = int(gr.Points_X[i, j + 1]) + \
+                                int(gr.disp_x[i, j + 1] * scale)
+                            y1 = int(gr.Points_Y[i, j + 1]) + \
+                                int(gr.disp_y[i, j + 1] * scale)
+                            frame = cv2.line(
+                                frame, (x, y), (x1, y1), surfColor, 4)
+    if &#39;file_Name&#39; in kwargs:
+        cv2.imwrite(kwargs[&#39;file_Name&#39;], frame)
+        return
+
+    cv2.namedWindow(&#39;image&#39;, cv2.WINDOW_NORMAL)
+    cv2.resizeWindow(&#39;image&#39;, frame.shape[1], frame.shape[0])
+    cv2.imshow(&#39;image&#39;, frame)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+
+
+def write_img_data(raw_Image_Data_File, image, points):
+    &#34;&#34;&#34;Writes image data points to the designated txt file.&#34;&#34;&#34;
+    raw_Image_Data_File.write(image + &#39;\t&#39;)
+    for p in points:
+        raw_Image_Data_File.write(str(p[0]) + &#39;,&#39; + str(p[1]) + &#39;\t&#39;)
+    raw_Image_Data_File.write(&#39;\n&#39;)
+
+
+def capture_Parameters():
+    &#34;&#34;&#34;UI to check Brightness, Contrast, ISO and Exposure compensation of picamera and define values&#34;&#34;&#34;
+
+    def nothing(x):
+        pass
+
+    cv2.namedWindow(&#39;Press_C_to_Confirm&#39;)
+    cv2.createTrackbar(&#39;Brightness&#39;, &#39;Press_C_to_Confirm&#39;, 50, 100, nothing)
+    cv2.createTrackbar(&#39;Contrast&#39;, &#39;Press_C_to_Confirm&#39;, 50, 100, nothing)
+    cv2.createTrackbar(&#39;Exposure&#39;, &#39;Press_C_to_Confirm&#39;, 25, 50, nothing)
+    cv2.createTrackbar(&#39;ISO&#39;, &#39;Press_C_to_Confirm&#39;, 1, 1600, nothing)
+    camera.exposure_mode = &#39;beach&#39;  # Can be changed. Follow picamera documentation
+    camera.awb_mode = &#39;tungsten&#39;  # Can be changed. Follow picamera documentation
+    camera.start_preview(fullscreen=False, window=(600, 400, 640, 480))
+    while True:
+        brightness = cv2.getTrackbarPos(&#34;Brightness&#34;, &#34;Press_C_to_Confirm&#34;)
+        camera.brightness = brightness
+        contrast = cv2.getTrackbarPos(&#34;Contrast&#34;, &#34;Press_C_to_Confirm&#34;)
+        camera.contrast = contrast
+        expos = cv2.getTrackbarPos(&#34;Exposure&#34;, &#34;Press_C_to_Confirm&#34;)
+        expos = int(expos - 25)
+        camera.exposure_compensation = expos
+        iso = cv2.getTrackbarPos(&#34;ISO&#34;, &#34;Press_C_to_Confirm&#34;)
+        camera.iso = iso
+        k = cv2.waitKey(1) &amp; 0xFF
+        if k == ord(&#39;c&#39;):
+            camera.stop_preview()
+            cv2.destroyAllWindows()
+            break
+    # This can be changed based on the processing power and speed of the device
+    # For maximum resolution, check picamera documentation
+    camera.resolution = (1920, 1080)
+
+
+def displacement_Compute(point, pointf):
+    &#34;&#34;&#34;Computes displacement between two image point arrays&#34;&#34;&#34;
+
+    assert len(point) == len(pointf)
+    values = []
+    for i, pt0 in enumerate(point):
+        pt1 = pointf[i]
+        values.append((pt1[0] - pt0[0], pt1[1] - pt0[1]))
+    return values
+
+
+def select_ROI(captured_Img):
+    &#34;&#34;&#34;UI to select the Region of Interest on the 2D surface&#34;&#34;&#34;
+
+    global area, cropping
+    image = cv2.putText(
+        captured_Img,
+        &#34;Choose Region of Interest (ROI) | Press c to Confirm, r to Reset&#34;,
+        (50, 1000), cv2.FONT_HERSHEY_DUPLEX, 1, (255, 0, 255), 2)
+
+    def select_Point(event, x, y, flags, param):
+        global area, cropping
+        if event == cv2.EVENT_LBUTTONDOWN:
+            area = [(x, y)]
+            cropping = True
+
+        elif event == cv2.EVENT_LBUTTONUP:
+            area.append((x, y))
+            cropping = False
+            draw_Image = cv2.rectangle(
+                image, area[0], area[1], (125, 115, 65), 2)
+            cv2.imshow(&#39;image&#39;, draw_Image)
+
+    clone = image.copy()
+    cv2.namedWindow(&#39;image&#39;, cv2.WINDOW_NORMAL)
+    cv2.resizeWindow(&#39;image&#39;, 640, 480)
+    cv2.setMouseCallback(&#34;image&#34;, select_Point)
+
+    while True:
+        cv2.imshow(&#34;image&#34;, image)
+        key = cv2.waitKey(1) &amp; 0xFF
+        if key == ord(&#34;r&#34;):
+            image = clone.copy()
+        elif key == ord(&#34;c&#34;):
+            break
+    return area
+
+
+def list_Point_Final(points, area, *args, **kwargs):
+    &#34;&#34;&#34;An internal function to organize the image points for further calculation&#34;&#34;&#34;
+
+    xmin = area[0][0]
+    xmax = area[1][0]
+    ymin = area[0][1]
+    ymax = area[1][1]
+    res = []
+    for p in points:
+        x = p[0]
+        y = p[1]
+        if ((x &gt;= xmin) and (x &lt;= xmax) and (y &gt;= ymin) and (y &lt;= ymax)):
+            res.append(p)
+    return np.array(res)
+
+
+def displacement_Measure(p1, p2):
+    &#34;&#34;&#34;A supporting function for displacement_Compute to measure displacement&#34;&#34;&#34;
+
+    A = []
+    B = []
+    removed_indices = []
+    for i in range(len(p1)):
+        if np.isnan(p1[i][0]):
+            assert np.isnan(p1[i][0]) and np.isnan(p1[i][1]) and np.isnan(
+                p2[i][0]) and np.isnan(p2[i][1])
+            removed_indices.append(i)
+        else:
+            A.append(p1[i])
+            B.append(p2[i])
+    A = np.matrix(A)
+    B = np.matrix(B)
+    assert len(A) == len(B)
+    N = A.shape[0]
+
+    centroid_A = np.mean(A, axis=0)
+    centroid_B = np.mean(B, axis=0)
+
+    AA = np.matrix(A - np.tile(centroid_A, (N, 1)))
+    BB = np.matrix(B - np.tile(centroid_B, (N, 1)))
+
+    H = np.transpose(AA) * BB
+    U, S, Vt = np.linalg.svd(H)
+    R = Vt.T * U.T
+
+    n = len(A)
+    T = -R * centroid_A.T + centroid_B.T
+    A2 = (R * A.T) + np.tile(T, (1, n))
+    A2 = np.array(A2.T)
+    out = []
+    j = 0
+    for i in range(len(p1)):
+        if np.isnan(p1[i][0]):
+            out.append(p1[i])
+        else:
+            out.append(A2[j])
+            j = j + 1
+    out = np.array(out)
+    return displacement_Compute(p2, out)
+
+
+def raw_Data_Process(raw_Image_Data_File, number, *args, **kwargs):
+    &#34;&#34;&#34;the raw_Data_Process is a a wrapper function that reads the raw result txt file, calculates displacements and strain fields
+    and generate interpolated/non-interpolated data for using in Plot Class. This also generates raw outputs if user prompts.
+    Parameters
+    ----------
+    - &#39;raw_Image_Data_File&#39; : Path to the file of the result txt file where raw image data is stored.
+    - &#39;number&#39; :  iteration step value, acquired from the DIC_Run function
+    * Other Arguments:
+    - &#39;interpolation&#39; the allowed vals are &#39;raw&#39;, &#39;bivar_Spline&#39;
+        raw : No Interpolation
+        bivar_Spline : interpolates displacement data using bivariate spline interpolation
+    - &#39;export_RAW&#39; : True or False ; True to get RAW displacement, strain and other important outputs for post processing.
+    - &#39;scale_disp&#39; : float; used to amplify the displacement values on displacement output images
+    - &#39;scale_mesh&#39; : float; used to amplify the pointwise mesh displacement values on mesh output images
+
+    &#34;&#34;&#34;
+
+    interpolation = &#39;raw&#39; if &#39;interpolation&#39; not in kwargs else kwargs[
+        &#39;interpolation&#39;]
+    export_RAW = True if &#39;export_RAW&#39; not in kwargs else kwargs[&#39;export_RAW&#39;]
+    scale_disp = 1. if &#39;scale_disp&#39; not in kwargs else float(
+        kwargs[&#39;scale_disp&#39;])
+    scale_mesh = 1. if &#39;scale_mesh&#39; not in kwargs else float(
+        kwargs[&#39;scale_mesh&#39;])
+
+    with open(raw_Image_Data_File) as f:
+        head = f.readlines()[0:2]
+    (xmin, xmax, xnum, window__Size_x) = [float(x) for x in head[0].split()]
+    (ymin, ymax, ynum, window__Size_y) = [float(x) for x in head[1].split()]
+    window__Size = (window__Size_x, window__Size_y)
+
+    Points_X, Points_Y = np.mgrid[xmin:xmax:int(xnum) * 1j,
+                                  ymin:ymax:int(ynum) * 1j]
+    surface_Maps = grid(Points_X, Points_Y, int(xnum), int(ynum))
+
+    list_Points_arr = []
+    list_Image_arr = []
+    list_Displacement_arr = []
+
+    with open(raw_Image_Data_File) as f:
+        res = f.readlines()[2:-1]
+        for line in res:
+            val = line.split(&#39;\t&#39;)
+            list_Image_arr.append(val[0])
+            point = []
+            for pair in val[1:-1]:
+                (x, y) = [float(x) for x in pair.split(&#39;,&#39;)]
+                point.append(np.array([np.float32(x), np.float32(y)]))
+            list_Points_arr.append(np.array(point))
+            surface_grid.append(copy.deepcopy(surface_Maps))
+    f.close()
+
+    k = number
+    for p, surface_Maps in enumerate(surface_grid):
+        print(&#39;.&#39;)  # for registering values of k, do not comment
+    print(&#34;computing strain field of&#34;, list_Image_arr[k], &#34;...&#34;)
+    disp = displacement_Measure(list_Points_arr[k], list_Points_arr[0])
+    surface_Maps.init_Raw_Data(
+        window__Size,
+        list_Image_arr[0],
+        list_Image_arr[k],
+        list_Points_arr[0],
+        list_Points_arr[k],
+        disp)
+    list_Displacement_arr.append(disp)
+    surface_Maps.bivariate_Interpolation(
+        list_Points_arr[0], disp, method=interpolation)
+    surface_Maps.strain_Field_Compute()
+
+    if (export_RAW):
+        surface_Maps.correlation_Image()
+        surface_Maps.displacement_Image(scale_disp)
+        surface_Maps.surface_Image(scale_mesh)
+        surface_Maps.raw_Data_CSV()
+
+
+def DIC_Run(image_Path, file_Name, window_Size_px, mesh_size_px,
+            raw_Image_Data_File, *args, **kwargs):
+    &#34;&#34;&#34;
+    This DIC_Run function is a simple wrapper function that captures images in a specific time interval.
+    Region of interest is selected by the user and displacements are computed with each increment. A result txt file
+    is written for image correlation.
+
+    - &#39;image_Path&#39; : the path where images will be captured
+    - &#39;window_Size_px&#39; : size in pixel of your correlation windows for LK Method
+    - &#39;mesh_size_px&#39; : the size of your correlation grid or mesh. The smaller the better, but requires more processing
+    power
+    - &#39;raw_Image_Data_File&#39; : locates your result txt file
+    &#34;&#34;&#34;
+
+    capture_Parameters()
+    camera.start_preview()
+    time.sleep(1)
+    file_location = &#39;./Test_%s/&#39; % file_Name
+    shutil.rmtree(file_location)
+    if not os.path.exists(file_location):
+        os.mkdir(file_location)
+
+    camera.capture(file_location + &#39;0.jpg&#39;)
+    camera.stop_preview()
+    img_ref = cv2.imread(file_location + &#39;0.jpg&#39;, 0)
+    img_list = sorted(glob.glob(image_Path), key=lambda t: os.stat(t).st_mtime)
+
+    area = select_ROI(img_ref)
+    points = []
+    points_x = np.float64(np.arange(area[0][0], area[1][0], mesh_size_px[0]))
+    points_y = np.float64(np.arange(area[0][1], area[1][1], mesh_size_px[1]))
+
+    for x in points_x:
+        for y in points_y:
+            points.append(np.array([np.float32(x), np.float32(y)]))
+    points = np.array(points)
+    point_List_Final = list_Point_Final(points, area, shape=&#39;box&#39;)
+
+    img_ref = cv2.imread(img_list[0], 0)
+    img_ref = cv2.putText(img_ref, &#34;Press any button to continue&#34;, (50, 1000),
+                          cv2.FONT_HERSHEY_DUPLEX, 1, (255, 255, 255), 2)
+    display_Image(img_ref, point=point_List_Final)
+
+    f = open(raw_Image_Data_File, &#39;w&#39;)
+    xmin = points_x[0]
+    xmax = points_x[-1]
+    xnum = len(points_x)
+    ymin = points_y[0]
+    ymax = points_y[-1]
+    ynum = len(points_y)
+    f.write(
+        str(xmin) + &#39;\t&#39; + str(xmax) + &#39;\t&#39; + str(int(xnum)) + &#39;\t&#39; +
+        str(int(window_Size_px[0])) + &#39;\n&#39;)
+    f.write(
+        str(ymin) + &#39;\t&#39; + str(ymax) + &#39;\t&#39; + str(int(ynum)) + &#39;\t&#39; +
+        str(int(window_Size_px[1])) + &#39;\n&#39;)
+
+    # Lucas-Kanade Method Paramaters from OpenCV
+    lk_params = dict(winSize=window_Size_px,
+                     maxLevel=10,
+                     criteria=(cv2.TERM_CRITERIA_EPS | cv2.TERM_CRITERIA_COUNT,
+                               10, 0.03))
+
+    ref_Points = point_List_Final
+    write_img_data(f, img_list[0], ref_Points)
+    f.close()
+
+    i = 0
+    plt.ion()
+    while True:
+        f = open(raw_Image_Data_File, &#39;a&#39;)
+        img_list = sorted(glob.glob(image_Path),
+                          key=lambda t: os.stat(t).st_mtime)
+        image_ref = cv2.imread(img_list[i], 0)
+        camera.capture(file_location + &#39;%i.jpg&#39; % (i + 1))
+        img_list = sorted(glob.glob(image_Path),
+                          key=lambda t: os.stat(t).st_mtime)
+        image_str = cv2.imread(img_list[i + 1], 0)
+        ref_Points, st, err = cv2.calcOpticalFlowPyrLK(image_ref, image_str,
+                                                       ref_Points, None,
+                                                       **lk_params)
+        write_img_data(f, img_list[i + 1], ref_Points)
+        f.close()
+
+        img_list = sorted(glob.glob(image_Path),
+                          key=lambda t: os.stat(t).st_mtime)
+        raw_Data_Process(&#39;./rawdata_%s.txt&#39; % file_Name,
+                         i,
+                         interpolation=&#39;bivar_Spline&#39;,
+                         export_RAW=False)
+
+        surfaceArr = surface_grid[-1]
+        os.mkdir(file_location + &#39;fig_%s&#39; % (i))
+
+        surfaceArr.insitu_Plot(surfaceArr.strain_longitudinal, &#39;x strain&#39;, 1,
+                               file_Name)
+        plt.savefig(file_location + &#39;fig_%s/x_strain_%s.png&#39; % (i, i), dpi=300)
+        surfaceArr.insitu_Plot(
+            surfaceArr.strain_transverse,
+            &#39;y strain&#39;,
+            2,
+            file_Name)
+        plt.savefig(file_location + &#39;fig_%s/y_strain_%s.png&#39; % (i, i), dpi=300)
+        print(&#34;Saved Strain Field for Image_%s...&#34; % i)
+
+        plt.show(block=False)
+        plt.pause(1)
+        i = i + 1
+    f.write(&#39;\n&#39;)
+    f.close()
+
+
+&#34;&#34;&#34; This part is executed and user information is given here. &#34;&#34;&#34;
+
+while True:
+    file_Name = input(&#34;Folder Name: &#34;)
+    if os.path.exists(&#39;./Test_%s&#39; % file_Name):
+        print(&#39;Folder exists already\nwarning: Data will be overwritten \nChoose different name&#39;)
+        continue
+    else:
+        os.mkdir(&#39;./Test_%s&#39; % file_Name)
+        break
+
+DIC_Run(&#39;./Test_%s/*.jpg&#39; % file_Name, file_Name,
+        lk_window_size, lk_grid_size, &#34;rawdata_%s.txt&#34; % file_Name)</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="RealPi2dDIC.DIC_Run"><code class="name flex">
+<span>def <span class="ident">DIC_Run</span></span>(<span>image_Path, file_Name, window_Size_px, mesh_size_px, raw_Image_Data_File, *args, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This DIC_Run function is a simple wrapper function that captures images in a specific time interval.
+Region of interest is selected by the user and displacements are computed with each increment. A result txt file
+is written for image correlation.</p>
+<ul>
+<li>'image_Path' : the path where images will be captured</li>
+<li>'window_Size_px' : size in pixel of your correlation windows for LK Method</li>
+<li>'mesh_size_px' : the size of your correlation grid or mesh. The smaller the better, but requires more processing
+power</li>
+<li>'raw_Image_Data_File' : locates your result txt file</li>
+</ul></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def DIC_Run(image_Path, file_Name, window_Size_px, mesh_size_px,
+            raw_Image_Data_File, *args, **kwargs):
+    &#34;&#34;&#34;
+    This DIC_Run function is a simple wrapper function that captures images in a specific time interval.
+    Region of interest is selected by the user and displacements are computed with each increment. A result txt file
+    is written for image correlation.
+
+    - &#39;image_Path&#39; : the path where images will be captured
+    - &#39;window_Size_px&#39; : size in pixel of your correlation windows for LK Method
+    - &#39;mesh_size_px&#39; : the size of your correlation grid or mesh. The smaller the better, but requires more processing
+    power
+    - &#39;raw_Image_Data_File&#39; : locates your result txt file
+    &#34;&#34;&#34;
+
+    capture_Parameters()
+    camera.start_preview()
+    time.sleep(1)
+    file_location = &#39;./Test_%s/&#39; % file_Name
+    shutil.rmtree(file_location)
+    if not os.path.exists(file_location):
+        os.mkdir(file_location)
+
+    camera.capture(file_location + &#39;0.jpg&#39;)
+    camera.stop_preview()
+    img_ref = cv2.imread(file_location + &#39;0.jpg&#39;, 0)
+    img_list = sorted(glob.glob(image_Path), key=lambda t: os.stat(t).st_mtime)
+
+    area = select_ROI(img_ref)
+    points = []
+    points_x = np.float64(np.arange(area[0][0], area[1][0], mesh_size_px[0]))
+    points_y = np.float64(np.arange(area[0][1], area[1][1], mesh_size_px[1]))
+
+    for x in points_x:
+        for y in points_y:
+            points.append(np.array([np.float32(x), np.float32(y)]))
+    points = np.array(points)
+    point_List_Final = list_Point_Final(points, area, shape=&#39;box&#39;)
+
+    img_ref = cv2.imread(img_list[0], 0)
+    img_ref = cv2.putText(img_ref, &#34;Press any button to continue&#34;, (50, 1000),
+                          cv2.FONT_HERSHEY_DUPLEX, 1, (255, 255, 255), 2)
+    display_Image(img_ref, point=point_List_Final)
+
+    f = open(raw_Image_Data_File, &#39;w&#39;)
+    xmin = points_x[0]
+    xmax = points_x[-1]
+    xnum = len(points_x)
+    ymin = points_y[0]
+    ymax = points_y[-1]
+    ynum = len(points_y)
+    f.write(
+        str(xmin) + &#39;\t&#39; + str(xmax) + &#39;\t&#39; + str(int(xnum)) + &#39;\t&#39; +
+        str(int(window_Size_px[0])) + &#39;\n&#39;)
+    f.write(
+        str(ymin) + &#39;\t&#39; + str(ymax) + &#39;\t&#39; + str(int(ynum)) + &#39;\t&#39; +
+        str(int(window_Size_px[1])) + &#39;\n&#39;)
+
+    # Lucas-Kanade Method Paramaters from OpenCV
+    lk_params = dict(winSize=window_Size_px,
+                     maxLevel=10,
+                     criteria=(cv2.TERM_CRITERIA_EPS | cv2.TERM_CRITERIA_COUNT,
+                               10, 0.03))
+
+    ref_Points = point_List_Final
+    write_img_data(f, img_list[0], ref_Points)
+    f.close()
+
+    i = 0
+    plt.ion()
+    while True:
+        f = open(raw_Image_Data_File, &#39;a&#39;)
+        img_list = sorted(glob.glob(image_Path),
+                          key=lambda t: os.stat(t).st_mtime)
+        image_ref = cv2.imread(img_list[i], 0)
+        camera.capture(file_location + &#39;%i.jpg&#39; % (i + 1))
+        img_list = sorted(glob.glob(image_Path),
+                          key=lambda t: os.stat(t).st_mtime)
+        image_str = cv2.imread(img_list[i + 1], 0)
+        ref_Points, st, err = cv2.calcOpticalFlowPyrLK(image_ref, image_str,
+                                                       ref_Points, None,
+                                                       **lk_params)
+        write_img_data(f, img_list[i + 1], ref_Points)
+        f.close()
+
+        img_list = sorted(glob.glob(image_Path),
+                          key=lambda t: os.stat(t).st_mtime)
+        raw_Data_Process(&#39;./rawdata_%s.txt&#39; % file_Name,
+                         i,
+                         interpolation=&#39;bivar_Spline&#39;,
+                         export_RAW=False)
+
+        surfaceArr = surface_grid[-1]
+        os.mkdir(file_location + &#39;fig_%s&#39; % (i))
+
+        surfaceArr.insitu_Plot(surfaceArr.strain_longitudinal, &#39;x strain&#39;, 1,
+                               file_Name)
+        plt.savefig(file_location + &#39;fig_%s/x_strain_%s.png&#39; % (i, i), dpi=300)
+        surfaceArr.insitu_Plot(
+            surfaceArr.strain_transverse,
+            &#39;y strain&#39;,
+            2,
+            file_Name)
+        plt.savefig(file_location + &#39;fig_%s/y_strain_%s.png&#39; % (i, i), dpi=300)
+        print(&#34;Saved Strain Field for Image_%s...&#34; % i)
+
+        plt.show(block=False)
+        plt.pause(1)
+        i = i + 1
+    f.write(&#39;\n&#39;)
+    f.close()</code></pre>
+</details>
+</dd>
+<dt id="RealPi2dDIC.capture_Parameters"><code class="name flex">
+<span>def <span class="ident">capture_Parameters</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>UI to check Brightness, Contrast, ISO and Exposure compensation of picamera and define values</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def capture_Parameters():
+    &#34;&#34;&#34;UI to check Brightness, Contrast, ISO and Exposure compensation of picamera and define values&#34;&#34;&#34;
+
+    def nothing(x):
+        pass
+
+    cv2.namedWindow(&#39;Press_C_to_Confirm&#39;)
+    cv2.createTrackbar(&#39;Brightness&#39;, &#39;Press_C_to_Confirm&#39;, 50, 100, nothing)
+    cv2.createTrackbar(&#39;Contrast&#39;, &#39;Press_C_to_Confirm&#39;, 50, 100, nothing)
+    cv2.createTrackbar(&#39;Exposure&#39;, &#39;Press_C_to_Confirm&#39;, 25, 50, nothing)
+    cv2.createTrackbar(&#39;ISO&#39;, &#39;Press_C_to_Confirm&#39;, 1, 1600, nothing)
+    camera.exposure_mode = &#39;beach&#39;  # Can be changed. Follow picamera documentation
+    camera.awb_mode = &#39;tungsten&#39;  # Can be changed. Follow picamera documentation
+    camera.start_preview(fullscreen=False, window=(600, 400, 640, 480))
+    while True:
+        brightness = cv2.getTrackbarPos(&#34;Brightness&#34;, &#34;Press_C_to_Confirm&#34;)
+        camera.brightness = brightness
+        contrast = cv2.getTrackbarPos(&#34;Contrast&#34;, &#34;Press_C_to_Confirm&#34;)
+        camera.contrast = contrast
+        expos = cv2.getTrackbarPos(&#34;Exposure&#34;, &#34;Press_C_to_Confirm&#34;)
+        expos = int(expos - 25)
+        camera.exposure_compensation = expos
+        iso = cv2.getTrackbarPos(&#34;ISO&#34;, &#34;Press_C_to_Confirm&#34;)
+        camera.iso = iso
+        k = cv2.waitKey(1) &amp; 0xFF
+        if k == ord(&#39;c&#39;):
+            camera.stop_preview()
+            cv2.destroyAllWindows()
+            break
+    # This can be changed based on the processing power and speed of the device
+    # For maximum resolution, check picamera documentation
+    camera.resolution = (1920, 1080)</code></pre>
+</details>
+</dd>
+<dt id="RealPi2dDIC.displacement_Compute"><code class="name flex">
+<span>def <span class="ident">displacement_Compute</span></span>(<span>point, pointf)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Computes displacement between two image point arrays</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def displacement_Compute(point, pointf):
+    &#34;&#34;&#34;Computes displacement between two image point arrays&#34;&#34;&#34;
+
+    assert len(point) == len(pointf)
+    values = []
+    for i, pt0 in enumerate(point):
+        pt1 = pointf[i]
+        values.append((pt1[0] - pt0[0], pt1[1] - pt0[1]))
+    return values</code></pre>
+</details>
+</dd>
+<dt id="RealPi2dDIC.displacement_Measure"><code class="name flex">
+<span>def <span class="ident">displacement_Measure</span></span>(<span>p1, p2)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>A supporting function for displacement_Compute to measure displacement</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def displacement_Measure(p1, p2):
+    &#34;&#34;&#34;A supporting function for displacement_Compute to measure displacement&#34;&#34;&#34;
+
+    A = []
+    B = []
+    removed_indices = []
+    for i in range(len(p1)):
+        if np.isnan(p1[i][0]):
+            assert np.isnan(p1[i][0]) and np.isnan(p1[i][1]) and np.isnan(
+                p2[i][0]) and np.isnan(p2[i][1])
+            removed_indices.append(i)
+        else:
+            A.append(p1[i])
+            B.append(p2[i])
+    A = np.matrix(A)
+    B = np.matrix(B)
+    assert len(A) == len(B)
+    N = A.shape[0]
+
+    centroid_A = np.mean(A, axis=0)
+    centroid_B = np.mean(B, axis=0)
+
+    AA = np.matrix(A - np.tile(centroid_A, (N, 1)))
+    BB = np.matrix(B - np.tile(centroid_B, (N, 1)))
+
+    H = np.transpose(AA) * BB
+    U, S, Vt = np.linalg.svd(H)
+    R = Vt.T * U.T
+
+    n = len(A)
+    T = -R * centroid_A.T + centroid_B.T
+    A2 = (R * A.T) + np.tile(T, (1, n))
+    A2 = np.array(A2.T)
+    out = []
+    j = 0
+    for i in range(len(p1)):
+        if np.isnan(p1[i][0]):
+            out.append(p1[i])
+        else:
+            out.append(A2[j])
+            j = j + 1
+    out = np.array(out)
+    return displacement_Compute(p2, out)</code></pre>
+</details>
+</dd>
+<dt id="RealPi2dDIC.display_Image"><code class="name flex">
+<span>def <span class="ident">display_Image</span></span>(<span>image, *args, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Draws opencv images for raw data visualization
+Parameters</p>
+<hr>
+<ul>
+<li>point : np.array</li>
+<li>p_color : (r,g,b) value
+arg to choose the color of point</li>
+<li>pointf : np.array
+draw lines between point and pointf</li>
+<li>l_color : (r,g,b) value
+arg to choose the color of lines</li>
+<li>grid : to display a grid, the grid must be a grid object</li>
+<li>surfColor : to choose the grid color</li>
+</ul></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def display_Image(image, *args, **kwargs):
+    &#34;&#34;&#34;Draws opencv images for raw data visualization
+    Parameters
+    ----------
+    - point : np.array
+    - p_color : (r,g,b) value
+         arg to choose the color of point
+    - pointf : np.array
+         draw lines between point and pointf
+    - l_color : (r,g,b) value
+         arg to choose the color of lines
+    - grid : to display a grid, the grid must be a grid object
+    - surfColor : to choose the grid color&#34;&#34;&#34;
+
+    if isinstance(image, str):
+        image = cv2.imread(image, 0)
+
+    if &#39;text&#39; in kwargs:
+        text = kwargs[&#39;text&#39;]
+        image = cv2.putText(image, text, (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 1,
+                            (255, 255, 255), 4)
+
+    frame = cv2.cvtColor(image, cv2.COLOR_GRAY2BGR)
+    if &#39;point&#39; in kwargs:
+        p_color = (160, 120,
+                   0) if &#39;p_color&#39; not in kwargs else kwargs[&#39;p_color&#39;]
+        for pt in kwargs[&#39;point&#39;]:
+            if not np.isnan(pt[0]) and not np.isnan(pt[1]):
+                x = int(pt[0])
+                y = int(pt[1])
+                frame = cv2.circle(frame, (x, y), 4, p_color, -1)
+
+    scale = 1. if &#39;scale&#39; not in kwargs else kwargs[&#39;scale&#39;]
+    if &#39;pointf&#39; in kwargs and &#39;point&#39; in kwargs:
+        assert len(kwargs[&#39;point&#39;]) == len(kwargs[&#39;pointf&#39;]), &#39;bad size&#39;
+        l_color = (255, 120,
+                   255) if &#39;l_color&#39; not in kwargs else kwargs[&#39;l_color&#39;]
+        for i, pt0 in enumerate(kwargs[&#39;point&#39;]):
+            pt1 = kwargs[&#39;pointf&#39;][i]
+            if np.isnan(
+                pt0[0]) == False and np.isnan(
+                pt0[1]) == False and np.isnan(
+                pt1[0]) == False and np.isnan(
+                    pt1[1]) == False:
+                disp_x = (pt1[0] - pt0[0]) * scale
+                disp_y = (pt1[1] - pt0[1]) * scale
+                frame = cv2.line(frame, (pt0[0], pt0[1]),
+                                 (int(pt0[0] + disp_x), int(pt0[1] + disp_y)),
+                                 l_color, 2)
+
+    if &#39;grid&#39; in kwargs:
+        gr = kwargs[&#39;grid&#39;]
+        surfColor = (255, 255,
+                     255) if &#39;surfColor&#39; not in kwargs else kwargs[&#39;surfColor&#39;]
+        for i in range(gr.size_x):
+            for j in range(gr.size_y):
+                if (not math.isnan(gr.Points_X[i, j]) and
+                        not math.isnan(gr.Points_Y[i, j]) and
+                        not math.isnan(gr.disp_x[i, j]) and
+                        not math.isnan(gr.disp_y[i, j])):
+                    x = int(gr.Points_X[i, j]) + int(gr.disp_x[i, j] * scale)
+                    y = int(gr.Points_Y[i, j]) + int(gr.disp_y[i, j] * scale)
+
+                    if i &lt; (gr.size_x - 1):
+                        if (not math.isnan(gr.Points_X[i + 1, j]) and
+                                not math.isnan(gr.Points_Y[i + 1, j]) and
+                                not math.isnan(gr.disp_x[i + 1, j]) and
+                                not math.isnan(gr.disp_y[i + 1, j])):
+                            x1 = int(gr.Points_X[i + 1, j]) + \
+                                int(gr.disp_x[i + 1, j] * scale)
+                            y1 = int(gr.Points_Y[i + 1, j]) + \
+                                int(gr.disp_y[i + 1, j] * scale)
+                            frame = cv2.line(
+                                frame, (x, y), (x1, y1), surfColor, 2)
+
+                    if j &lt; (gr.size_y - 1):
+                        if (not math.isnan(gr.Points_X[i, j + 1]) and
+                                not math.isnan(gr.Points_Y[i, j + 1]) and
+                                not math.isnan(gr.disp_x[i, j + 1]) and
+                                not math.isnan(gr.disp_y[i, j + 1])):
+                            x1 = int(gr.Points_X[i, j + 1]) + \
+                                int(gr.disp_x[i, j + 1] * scale)
+                            y1 = int(gr.Points_Y[i, j + 1]) + \
+                                int(gr.disp_y[i, j + 1] * scale)
+                            frame = cv2.line(
+                                frame, (x, y), (x1, y1), surfColor, 4)
+    if &#39;file_Name&#39; in kwargs:
+        cv2.imwrite(kwargs[&#39;file_Name&#39;], frame)
+        return
+
+    cv2.namedWindow(&#39;image&#39;, cv2.WINDOW_NORMAL)
+    cv2.resizeWindow(&#39;image&#39;, frame.shape[1], frame.shape[0])
+    cv2.imshow(&#39;image&#39;, frame)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()</code></pre>
+</details>
+</dd>
+<dt id="RealPi2dDIC.list_Point_Final"><code class="name flex">
+<span>def <span class="ident">list_Point_Final</span></span>(<span>points, area, *args, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>An internal function to organize the image points for further calculation</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def list_Point_Final(points, area, *args, **kwargs):
+    &#34;&#34;&#34;An internal function to organize the image points for further calculation&#34;&#34;&#34;
+
+    xmin = area[0][0]
+    xmax = area[1][0]
+    ymin = area[0][1]
+    ymax = area[1][1]
+    res = []
+    for p in points:
+        x = p[0]
+        y = p[1]
+        if ((x &gt;= xmin) and (x &lt;= xmax) and (y &gt;= ymin) and (y &lt;= ymax)):
+            res.append(p)
+    return np.array(res)</code></pre>
+</details>
+</dd>
+<dt id="RealPi2dDIC.raw_Data_Process"><code class="name flex">
+<span>def <span class="ident">raw_Data_Process</span></span>(<span>raw_Image_Data_File, number, *args, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>the raw_Data_Process is a a wrapper function that reads the raw result txt file, calculates displacements and strain fields
+and generate interpolated/non-interpolated data for using in Plot Class. This also generates raw outputs if user prompts.
+Parameters</p>
+<hr>
+<ul>
+<li>'raw_Image_Data_File' : Path to the file of the result txt file where raw image data is stored.</li>
+<li>'number' :
+iteration step value, acquired from the DIC_Run function</li>
+<li>Other Arguments:</li>
+<li>'interpolation' the allowed vals are 'raw', 'bivar_Spline'
+raw : No Interpolation
+bivar_Spline : interpolates displacement data using bivariate spline interpolation</li>
+<li>'export_RAW' : True or False ; True to get RAW displacement, strain and other important outputs for post processing.</li>
+<li>'scale_disp' : float; used to amplify the displacement values on displacement output images</li>
+<li>'scale_mesh' : float; used to amplify the pointwise mesh displacement values on mesh output images</li>
+</ul></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def raw_Data_Process(raw_Image_Data_File, number, *args, **kwargs):
+    &#34;&#34;&#34;the raw_Data_Process is a a wrapper function that reads the raw result txt file, calculates displacements and strain fields
+    and generate interpolated/non-interpolated data for using in Plot Class. This also generates raw outputs if user prompts.
+    Parameters
+    ----------
+    - &#39;raw_Image_Data_File&#39; : Path to the file of the result txt file where raw image data is stored.
+    - &#39;number&#39; :  iteration step value, acquired from the DIC_Run function
+    * Other Arguments:
+    - &#39;interpolation&#39; the allowed vals are &#39;raw&#39;, &#39;bivar_Spline&#39;
+        raw : No Interpolation
+        bivar_Spline : interpolates displacement data using bivariate spline interpolation
+    - &#39;export_RAW&#39; : True or False ; True to get RAW displacement, strain and other important outputs for post processing.
+    - &#39;scale_disp&#39; : float; used to amplify the displacement values on displacement output images
+    - &#39;scale_mesh&#39; : float; used to amplify the pointwise mesh displacement values on mesh output images
+
+    &#34;&#34;&#34;
+
+    interpolation = &#39;raw&#39; if &#39;interpolation&#39; not in kwargs else kwargs[
+        &#39;interpolation&#39;]
+    export_RAW = True if &#39;export_RAW&#39; not in kwargs else kwargs[&#39;export_RAW&#39;]
+    scale_disp = 1. if &#39;scale_disp&#39; not in kwargs else float(
+        kwargs[&#39;scale_disp&#39;])
+    scale_mesh = 1. if &#39;scale_mesh&#39; not in kwargs else float(
+        kwargs[&#39;scale_mesh&#39;])
+
+    with open(raw_Image_Data_File) as f:
+        head = f.readlines()[0:2]
+    (xmin, xmax, xnum, window__Size_x) = [float(x) for x in head[0].split()]
+    (ymin, ymax, ynum, window__Size_y) = [float(x) for x in head[1].split()]
+    window__Size = (window__Size_x, window__Size_y)
+
+    Points_X, Points_Y = np.mgrid[xmin:xmax:int(xnum) * 1j,
+                                  ymin:ymax:int(ynum) * 1j]
+    surface_Maps = grid(Points_X, Points_Y, int(xnum), int(ynum))
+
+    list_Points_arr = []
+    list_Image_arr = []
+    list_Displacement_arr = []
+
+    with open(raw_Image_Data_File) as f:
+        res = f.readlines()[2:-1]
+        for line in res:
+            val = line.split(&#39;\t&#39;)
+            list_Image_arr.append(val[0])
+            point = []
+            for pair in val[1:-1]:
+                (x, y) = [float(x) for x in pair.split(&#39;,&#39;)]
+                point.append(np.array([np.float32(x), np.float32(y)]))
+            list_Points_arr.append(np.array(point))
+            surface_grid.append(copy.deepcopy(surface_Maps))
+    f.close()
+
+    k = number
+    for p, surface_Maps in enumerate(surface_grid):
+        print(&#39;.&#39;)  # for registering values of k, do not comment
+    print(&#34;computing strain field of&#34;, list_Image_arr[k], &#34;...&#34;)
+    disp = displacement_Measure(list_Points_arr[k], list_Points_arr[0])
+    surface_Maps.init_Raw_Data(
+        window__Size,
+        list_Image_arr[0],
+        list_Image_arr[k],
+        list_Points_arr[0],
+        list_Points_arr[k],
+        disp)
+    list_Displacement_arr.append(disp)
+    surface_Maps.bivariate_Interpolation(
+        list_Points_arr[0], disp, method=interpolation)
+    surface_Maps.strain_Field_Compute()
+
+    if (export_RAW):
+        surface_Maps.correlation_Image()
+        surface_Maps.displacement_Image(scale_disp)
+        surface_Maps.surface_Image(scale_mesh)
+        surface_Maps.raw_Data_CSV()</code></pre>
+</details>
+</dd>
+<dt id="RealPi2dDIC.select_ROI"><code class="name flex">
+<span>def <span class="ident">select_ROI</span></span>(<span>captured_Img)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>UI to select the Region of Interest on the 2D surface</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def select_ROI(captured_Img):
+    &#34;&#34;&#34;UI to select the Region of Interest on the 2D surface&#34;&#34;&#34;
+
+    global area, cropping
+    image = cv2.putText(
+        captured_Img,
+        &#34;Choose Region of Interest (ROI) | Press c to Confirm, r to Reset&#34;,
+        (50, 1000), cv2.FONT_HERSHEY_DUPLEX, 1, (255, 0, 255), 2)
+
+    def select_Point(event, x, y, flags, param):
+        global area, cropping
+        if event == cv2.EVENT_LBUTTONDOWN:
+            area = [(x, y)]
+            cropping = True
+
+        elif event == cv2.EVENT_LBUTTONUP:
+            area.append((x, y))
+            cropping = False
+            draw_Image = cv2.rectangle(
+                image, area[0], area[1], (125, 115, 65), 2)
+            cv2.imshow(&#39;image&#39;, draw_Image)
+
+    clone = image.copy()
+    cv2.namedWindow(&#39;image&#39;, cv2.WINDOW_NORMAL)
+    cv2.resizeWindow(&#39;image&#39;, 640, 480)
+    cv2.setMouseCallback(&#34;image&#34;, select_Point)
+
+    while True:
+        cv2.imshow(&#34;image&#34;, image)
+        key = cv2.waitKey(1) &amp; 0xFF
+        if key == ord(&#34;r&#34;):
+            image = clone.copy()
+        elif key == ord(&#34;c&#34;):
+            break
+    return area</code></pre>
+</details>
+</dd>
+<dt id="RealPi2dDIC.surface_Generate"><code class="name flex">
+<span>def <span class="ident">surface_Generate</span></span>(<span>area, num_point, *args, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Generates a surface grid using points from region of interest</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def surface_Generate(area, num_point, *args, **kwargs):
+    &#34;&#34;&#34;Generates a surface grid using points from region of interest&#34;&#34;&#34;
+
+    xmin = area[0][0]
+    xmax = area[1][0]
+    dx = xmax - xmin
+    ymin = area[0][1]
+    ymax = area[1][1]
+    dy = ymax - ymin
+    point_surface = dx * dy / num_point
+    point_line = math.sqrt(point_surface)
+    ratio = 1. if &#39;ratio&#39; not in kwargs else kwargs[&#39;ratio&#39;]
+    num_x = int(ratio * dx / point_line) + 1
+    num_y = int(ratio * dy / point_line) + 1
+    Points_X, Points_Y = np.mgrid[xmin:xmax:num_x * 1j, ymin:ymax:num_y * 1j]
+    return grid(Points_X, Points_Y, num_x, num_y)</code></pre>
+</details>
+</dd>
+<dt id="RealPi2dDIC.write_img_data"><code class="name flex">
+<span>def <span class="ident">write_img_data</span></span>(<span>raw_Image_Data_File, image, points)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Writes image data points to the designated txt file.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def write_img_data(raw_Image_Data_File, image, points):
+    &#34;&#34;&#34;Writes image data points to the designated txt file.&#34;&#34;&#34;
+    raw_Image_Data_File.write(image + &#39;\t&#39;)
+    for p in points:
+        raw_Image_Data_File.write(str(p[0]) + &#39;,&#39; + str(p[1]) + &#39;\t&#39;)
+    raw_Image_Data_File.write(&#39;\n&#39;)</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="RealPi2dDIC.Plot"><code class="flex name class">
+<span>class <span class="ident">Plot</span></span>
+<span>(</span><span>image, grid, data, title, fig)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Plot class includes all the required operations for interactive plotting of strain field data on the reference image
+using matplotlib</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Plot:
+    &#34;&#34;&#34; Plot class includes all the required operations for interactive plotting of strain field data on the reference image
+    using matplotlib &#34;&#34;&#34;
+
+    def __init__(self, image, grid, data, title, fig):
+        self.data = np.ma.masked_invalid(data)
+        self.data_copy = np.copy(self.data)
+        self.Points_X = grid.Points_X
+        self.Points_Y = grid.Points_Y
+        self.data = np.ma.array(self.data, mask=self.data == np.nan)
+
+        self.fig = plt.figure(fig)
+        plt.clf()
+        self.ax = self.fig.add_subplot(111)
+        self.fig.subplots_adjust(left=0.15, bottom=0.05, right=0.95, top=1.00)
+
+        self.ax.imshow(image, cmap=&#39;Greys&#39;)
+
+        self.im = self.ax.contourf(grid.Points_X,
+                                   grid.Points_Y,
+                                   self.data,
+                                   50,
+                                   cmap=&#39;rainbow&#39;,
+                                   alpha=0.75)
+
+        self.ax.set_title(title)
+        self.ax.set_ylabel(&#39;Height (Pixels)&#39;)
+        self.ax.set_xlabel(&#39;Width (Pixels)&#39;)
+        self.cb = self.fig.colorbar(self.im)</code></pre>
+</details>
+</dd>
+<dt id="RealPi2dDIC.grid"><code class="flex name class">
+<span>class <span class="ident">grid</span></span>
+<span>(</span><span>Points_X, Points_Y, size_x, size_y)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>A class used for many important features starting from
+capturing photos to image correlation and processing rawdata.</p>
+<p>This generates new grid object with x coordinate (Points_X)
+y coordinate (Points_Y), number of point along x (size_x) and
+number of point along y (size_y)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class grid:
+    &#34;&#34;&#34;A class used for many important features starting from
+    capturing photos to image correlation and processing rawdata.&#34;&#34;&#34;
+
+    def __init__(self, Points_X, Points_Y, size_x, size_y):
+        &#34;&#34;&#34;
+        This generates new grid object with x coordinate (Points_X)
+        y coordinate (Points_Y), number of point along x (size_x) and
+        number of point along y (size_y)&#34;&#34;&#34;
+
+        self.Points_X = Points_X
+        self.Points_Y = Points_Y
+        self.size_x = size_x
+        self.size_y = size_y
+        self.disp_x = self.Points_X.copy().fill(0.)
+        self.disp_y = self.Points_Y.copy().fill(0.)
+        self.strain_longitudinal = None
+        self.strain_transverse = None
+        self.strain_xy = None
+
+    def init_Raw_Data(self, winsize, reference_image, image, reference_point,
+                      correlated_point, disp):
+        &#34;&#34;&#34;Saves raw image data using opencv to current grid object&#34;&#34;&#34;
+
+        self.winsize = winsize
+        self.reference_image = reference_image
+        self.image = image
+        self.reference_point = reference_point
+        self.correlated_point = correlated_point
+        self.disp = disp
+
+    def directory_Name(self, prefix, extension):
+        &#34;&#34;&#34;Makes specific directories for storing specific results including
+        surface image, grid displacement, raw data in CSV format&#34;&#34;&#34;
+
+        folder = os.path.dirname(self.image)
+        folder = folder + &#39;/rawdata/&#39; + prefix
+        if not os.path.exists(folder):
+            os.makedirs(folder)
+        base = os.path.basename(self.image)
+        name = folder + &#39;/&#39; + \
+            os.path.splitext(base)[0] + &#39;_&#39; + prefix + &#39;.&#39; + extension
+        return name
+
+    def save_Points(self, pref, poInt):
+        &#34;&#34;&#34;saves correlated points and reference points array to a txt file &#34;&#34;&#34;
+        folderLocation = os.path.dirname(self.image)
+        folderLocation = folderLocation + &#39;/rawdata/%s&#39; % pref
+        if not os.path.exists(folderLocation):
+            os.makedirs(folderLocation)
+        num = os.path.splitext(os.path.basename(self.image))[0]
+        np.savetxt(&#39;%s/%s_%s.txt&#39; % (folderLocation, pref, num),
+                   poInt,
+                   delimiter=&#39;,&#39;)
+
+    def correlation_Image(self):
+        &#34;&#34;&#34;Draws image correlation data points on reference image for each data point&#34;&#34;&#34;
+
+        name = self.directory_Name(&#39;marker&#39;, &#39;png&#39;)
+        display_Image(self.image,
+                      point=self.correlated_point,
+                      l_color=(0, 120, 255),
+                      p_color=(140, 130, 0),
+                      file_Name=name,
+                      text=name)
+        self.save_Points(&#39;correlatedPoints&#39;, self.correlated_point)
+
+    def displacement_Image(self, scale):
+        &#34;&#34;&#34;Draws displacement image on reference image for each data point.
+        Parameters
+        ----------
+        scale : int
+             to amplify the displacement
+        &#34;&#34;&#34;
+
+        name = self.directory_Name(&#39;disp&#39;, &#39;png&#39;)
+        display_Image(self.reference_image,
+                      point=self.reference_point,
+                      pointf=self.correlated_point,
+                      l_color=(125, 0, 125),
+                      p_color=(125, 125, 125),
+                      scale=scale,
+                      file_Name=name,
+                      text=name)
+        self.save_Points(&#39;DisplacementPoints&#39;, self.reference_point)
+
+    def surface_Image(self, scale):
+        &#34;&#34;&#34;Draws mesh deformations on reference image for each data point.
+        Parameters
+        ----------
+        scale : int
+             to amplify the deformation
+        &#34;&#34;&#34;
+        name = self.directory_Name(&#39;surface&#39;, &#39;png&#39;)
+        display_Image(self.reference_image,
+                      grid=self,
+                      scale=scale,
+                      surfColor=(255, 0, 250),
+                      file_Name=name,
+                      text=name)
+
+    def raw_Data_CSV(self):
+        &#34;&#34;&#34;writes a csv file for displacement, strain and other parameters.
+        This data can be used for post processing&#34;&#34;&#34;
+
+        name = self.directory_Name(&#39;result&#39;, &#39;csv&#39;)
+        f = open(name, &#39;w&#39;)
+        f.write(&#34;index&#34; + &#39;,&#39; + &#34;index_x&#34; + &#39;,&#39; + &#34;index_y&#34; + &#39;,&#39; + &#34;x (px)&#34; +
+                &#39;,&#39; + &#34;y (px)&#34; + &#39;,&#39; + &#34;x_Displacement&#34; + &#39;,&#39; +
+                &#34;y_Displacement&#34; + &#39;,&#39; + &#34;x_Strain&#34; + &#39;,&#39; + &#34;y_Strain&#34; + &#39;,&#39; +
+                &#34;xy_Strain&#34; + &#39;\n&#39;)
+        index = 0
+        for i in range(self.size_x):
+            for j in range(self.size_y):
+                f.write(
+                    str(index) + &#39;,&#39; + str(i) + &#39;,&#39; + str(j) + &#39;,&#39; +
+                    str(self.Points_X[i, j]) + &#39;,&#39; + str(self.Points_Y[i, j]) +
+                    &#39;,&#39; + str(self.disp_x[i, j]) + &#39;,&#39; +
+                    str(self.disp_y[i, j]) + &#39;,&#39; + str(self.strain_longitudinal[i, j]) +
+                    &#39;,&#39; + str(self.strain_transverse[i, j]) + &#39;,&#39; +
+                    str(self.strain_xy[i, j]) + &#39;\n&#39;)
+                index = index + 1
+        f.close()
+
+    def insitu_Plot(self, field, title, fig_No, img_file_Name):
+        &#34;&#34;&#34;Connects with Plot Class. Plots in-situ strain field using matplotlib interactive mapping&#34;&#34;&#34;
+
+        img_folder = &#39;./Test_%s/*.jpg&#39; % img_file_Name
+        img_listt = sorted(glob.glob(img_folder),
+                           key=lambda t: os.stat(t).st_mtime)
+        image_ref = cv2.imread(img_listt[0], 0)
+        Plot(image_ref, self, field, title, fig_No)
+
+    def bivariate_Interpolation(self, point, disp, *args, **kwargs):
+        &#34;&#34;&#34;Interpolates the displacement field. Bivariate B-spline interpolation algorithm from scipy is used here.
+        for no interpolation option this can use raw method&#34;&#34;&#34;
+
+        dx = np.array([d[0] for d in disp])
+        dy = np.array([d[1] for d in disp])
+        method = &#39;raw&#39; if &#39;method&#39; not in kwargs else kwargs[&#39;method&#39;]
+        if method == &#39;raw&#39;:
+            self.disp_x = self.Points_X.copy()
+            self.disp_y = self.Points_Y.copy()
+            count = 0
+            for i in range(self.disp_x.shape[0]):
+                for j in range(self.disp_x.shape[1]):
+                    self.disp_x[i, j] = dx[count]
+                    self.disp_y[i, j] = dy[count]
+                    count = count + 1
+
+        elif method == &#39;bivar_Spline&#39;:
+            tck_x = scipy.interpolate.bisplrep(self.Points_X,
+                                               self.Points_Y,
+                                               dx,
+                                               kx=5,
+                                               ky=5)
+            self.disp_x = scipy.interpolate.bisplev(self.Points_X[:, 0],
+                                                    self.Points_Y[0, :], tck_x)
+            tck_y = scipy.interpolate.bisplrep(self.Points_X,
+                                               self.Points_Y,
+                                               dy,
+                                               kx=5,
+                                               ky=5)
+            self.disp_y = scipy.interpolate.bisplev(self.Points_X[:, 0],
+                                                    self.Points_Y[0, :], tck_y)
+
+    def strain_Field_Compute(self):
+        &#34;&#34;&#34;Computes Green-Langragian strain field from interpolated displacement data using numpy&#34;&#34;&#34;
+
+        dx = self.Points_X[1][0] - self.Points_X[0][0]
+        dy = self.Points_Y[0][1] - self.Points_Y[0][0]
+
+        strain_longitudinal, strain_xy = np.gradient(
+            self.disp_x, dx, dy, edge_order=2)
+        strain_yx, strain_transverse = np.gradient(
+            self.disp_y, dx, dy, edge_order=2)
+
+        self.strain_longitudinal = strain_longitudinal + .5 * \
+            (np.power(strain_longitudinal, 2) + np.power(strain_xy, 2))
+        self.strain_transverse = strain_transverse + .5 * \
+            (np.power(strain_transverse, 2) + np.power(strain_yx, 2))
+        self.strain_xy = .5 * (strain_xy + strain_yx + strain_longitudinal * strain_xy +
+                               strain_yx * strain_transverse)</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="RealPi2dDIC.grid.bivariate_Interpolation"><code class="name flex">
+<span>def <span class="ident">bivariate_Interpolation</span></span>(<span>self, point, disp, *args, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Interpolates the displacement field. Bivariate B-spline interpolation algorithm from scipy is used here.
+for no interpolation option this can use raw method</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def bivariate_Interpolation(self, point, disp, *args, **kwargs):
+    &#34;&#34;&#34;Interpolates the displacement field. Bivariate B-spline interpolation algorithm from scipy is used here.
+    for no interpolation option this can use raw method&#34;&#34;&#34;
+
+    dx = np.array([d[0] for d in disp])
+    dy = np.array([d[1] for d in disp])
+    method = &#39;raw&#39; if &#39;method&#39; not in kwargs else kwargs[&#39;method&#39;]
+    if method == &#39;raw&#39;:
+        self.disp_x = self.Points_X.copy()
+        self.disp_y = self.Points_Y.copy()
+        count = 0
+        for i in range(self.disp_x.shape[0]):
+            for j in range(self.disp_x.shape[1]):
+                self.disp_x[i, j] = dx[count]
+                self.disp_y[i, j] = dy[count]
+                count = count + 1
+
+    elif method == &#39;bivar_Spline&#39;:
+        tck_x = scipy.interpolate.bisplrep(self.Points_X,
+                                           self.Points_Y,
+                                           dx,
+                                           kx=5,
+                                           ky=5)
+        self.disp_x = scipy.interpolate.bisplev(self.Points_X[:, 0],
+                                                self.Points_Y[0, :], tck_x)
+        tck_y = scipy.interpolate.bisplrep(self.Points_X,
+                                           self.Points_Y,
+                                           dy,
+                                           kx=5,
+                                           ky=5)
+        self.disp_y = scipy.interpolate.bisplev(self.Points_X[:, 0],
+                                                self.Points_Y[0, :], tck_y)</code></pre>
+</details>
+</dd>
+<dt id="RealPi2dDIC.grid.correlation_Image"><code class="name flex">
+<span>def <span class="ident">correlation_Image</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Draws image correlation data points on reference image for each data point</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def correlation_Image(self):
+    &#34;&#34;&#34;Draws image correlation data points on reference image for each data point&#34;&#34;&#34;
+
+    name = self.directory_Name(&#39;marker&#39;, &#39;png&#39;)
+    display_Image(self.image,
+                  point=self.correlated_point,
+                  l_color=(0, 120, 255),
+                  p_color=(140, 130, 0),
+                  file_Name=name,
+                  text=name)
+    self.save_Points(&#39;correlatedPoints&#39;, self.correlated_point)</code></pre>
+</details>
+</dd>
+<dt id="RealPi2dDIC.grid.directory_Name"><code class="name flex">
+<span>def <span class="ident">directory_Name</span></span>(<span>self, prefix, extension)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Makes specific directories for storing specific results including
+surface image, grid displacement, raw data in CSV format</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def directory_Name(self, prefix, extension):
+    &#34;&#34;&#34;Makes specific directories for storing specific results including
+    surface image, grid displacement, raw data in CSV format&#34;&#34;&#34;
+
+    folder = os.path.dirname(self.image)
+    folder = folder + &#39;/rawdata/&#39; + prefix
+    if not os.path.exists(folder):
+        os.makedirs(folder)
+    base = os.path.basename(self.image)
+    name = folder + &#39;/&#39; + \
+        os.path.splitext(base)[0] + &#39;_&#39; + prefix + &#39;.&#39; + extension
+    return name</code></pre>
+</details>
+</dd>
+<dt id="RealPi2dDIC.grid.displacement_Image"><code class="name flex">
+<span>def <span class="ident">displacement_Image</span></span>(<span>self, scale)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Draws displacement image on reference image for each data point.
+Parameters</p>
+<hr>
+<dl>
+<dt><strong><code>scale</code></strong> :&ensp;<code>int</code></dt>
+<dd>to amplify the displacement</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def displacement_Image(self, scale):
+    &#34;&#34;&#34;Draws displacement image on reference image for each data point.
+    Parameters
+    ----------
+    scale : int
+         to amplify the displacement
+    &#34;&#34;&#34;
+
+    name = self.directory_Name(&#39;disp&#39;, &#39;png&#39;)
+    display_Image(self.reference_image,
+                  point=self.reference_point,
+                  pointf=self.correlated_point,
+                  l_color=(125, 0, 125),
+                  p_color=(125, 125, 125),
+                  scale=scale,
+                  file_Name=name,
+                  text=name)
+    self.save_Points(&#39;DisplacementPoints&#39;, self.reference_point)</code></pre>
+</details>
+</dd>
+<dt id="RealPi2dDIC.grid.init_Raw_Data"><code class="name flex">
+<span>def <span class="ident">init_Raw_Data</span></span>(<span>self, winsize, reference_image, image, reference_point, correlated_point, disp)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Saves raw image data using opencv to current grid object</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def init_Raw_Data(self, winsize, reference_image, image, reference_point,
+                  correlated_point, disp):
+    &#34;&#34;&#34;Saves raw image data using opencv to current grid object&#34;&#34;&#34;
+
+    self.winsize = winsize
+    self.reference_image = reference_image
+    self.image = image
+    self.reference_point = reference_point
+    self.correlated_point = correlated_point
+    self.disp = disp</code></pre>
+</details>
+</dd>
+<dt id="RealPi2dDIC.grid.insitu_Plot"><code class="name flex">
+<span>def <span class="ident">insitu_Plot</span></span>(<span>self, field, title, fig_No, img_file_Name)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Connects with Plot Class. Plots in-situ strain field using matplotlib interactive mapping</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def insitu_Plot(self, field, title, fig_No, img_file_Name):
+    &#34;&#34;&#34;Connects with Plot Class. Plots in-situ strain field using matplotlib interactive mapping&#34;&#34;&#34;
+
+    img_folder = &#39;./Test_%s/*.jpg&#39; % img_file_Name
+    img_listt = sorted(glob.glob(img_folder),
+                       key=lambda t: os.stat(t).st_mtime)
+    image_ref = cv2.imread(img_listt[0], 0)
+    Plot(image_ref, self, field, title, fig_No)</code></pre>
+</details>
+</dd>
+<dt id="RealPi2dDIC.grid.raw_Data_CSV"><code class="name flex">
+<span>def <span class="ident">raw_Data_CSV</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>writes a csv file for displacement, strain and other parameters.
+This data can be used for post processing</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def raw_Data_CSV(self):
+    &#34;&#34;&#34;writes a csv file for displacement, strain and other parameters.
+    This data can be used for post processing&#34;&#34;&#34;
+
+    name = self.directory_Name(&#39;result&#39;, &#39;csv&#39;)
+    f = open(name, &#39;w&#39;)
+    f.write(&#34;index&#34; + &#39;,&#39; + &#34;index_x&#34; + &#39;,&#39; + &#34;index_y&#34; + &#39;,&#39; + &#34;x (px)&#34; +
+            &#39;,&#39; + &#34;y (px)&#34; + &#39;,&#39; + &#34;x_Displacement&#34; + &#39;,&#39; +
+            &#34;y_Displacement&#34; + &#39;,&#39; + &#34;x_Strain&#34; + &#39;,&#39; + &#34;y_Strain&#34; + &#39;,&#39; +
+            &#34;xy_Strain&#34; + &#39;\n&#39;)
+    index = 0
+    for i in range(self.size_x):
+        for j in range(self.size_y):
+            f.write(
+                str(index) + &#39;,&#39; + str(i) + &#39;,&#39; + str(j) + &#39;,&#39; +
+                str(self.Points_X[i, j]) + &#39;,&#39; + str(self.Points_Y[i, j]) +
+                &#39;,&#39; + str(self.disp_x[i, j]) + &#39;,&#39; +
+                str(self.disp_y[i, j]) + &#39;,&#39; + str(self.strain_longitudinal[i, j]) +
+                &#39;,&#39; + str(self.strain_transverse[i, j]) + &#39;,&#39; +
+                str(self.strain_xy[i, j]) + &#39;\n&#39;)
+            index = index + 1
+    f.close()</code></pre>
+</details>
+</dd>
+<dt id="RealPi2dDIC.grid.save_Points"><code class="name flex">
+<span>def <span class="ident">save_Points</span></span>(<span>self, pref, poInt)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>saves correlated points and reference points array to a txt file</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def save_Points(self, pref, poInt):
+    &#34;&#34;&#34;saves correlated points and reference points array to a txt file &#34;&#34;&#34;
+    folderLocation = os.path.dirname(self.image)
+    folderLocation = folderLocation + &#39;/rawdata/%s&#39; % pref
+    if not os.path.exists(folderLocation):
+        os.makedirs(folderLocation)
+    num = os.path.splitext(os.path.basename(self.image))[0]
+    np.savetxt(&#39;%s/%s_%s.txt&#39; % (folderLocation, pref, num),
+               poInt,
+               delimiter=&#39;,&#39;)</code></pre>
+</details>
+</dd>
+<dt id="RealPi2dDIC.grid.strain_Field_Compute"><code class="name flex">
+<span>def <span class="ident">strain_Field_Compute</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Computes Green-Langragian strain field from interpolated displacement data using numpy</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def strain_Field_Compute(self):
+    &#34;&#34;&#34;Computes Green-Langragian strain field from interpolated displacement data using numpy&#34;&#34;&#34;
+
+    dx = self.Points_X[1][0] - self.Points_X[0][0]
+    dy = self.Points_Y[0][1] - self.Points_Y[0][0]
+
+    strain_longitudinal, strain_xy = np.gradient(
+        self.disp_x, dx, dy, edge_order=2)
+    strain_yx, strain_transverse = np.gradient(
+        self.disp_y, dx, dy, edge_order=2)
+
+    self.strain_longitudinal = strain_longitudinal + .5 * \
+        (np.power(strain_longitudinal, 2) + np.power(strain_xy, 2))
+    self.strain_transverse = strain_transverse + .5 * \
+        (np.power(strain_transverse, 2) + np.power(strain_yx, 2))
+    self.strain_xy = .5 * (strain_xy + strain_yx + strain_longitudinal * strain_xy +
+                           strain_yx * strain_transverse)</code></pre>
+</details>
+</dd>
+<dt id="RealPi2dDIC.grid.surface_Image"><code class="name flex">
+<span>def <span class="ident">surface_Image</span></span>(<span>self, scale)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Draws mesh deformations on reference image for each data point.
+Parameters</p>
+<hr>
+<dl>
+<dt><strong><code>scale</code></strong> :&ensp;<code>int</code></dt>
+<dd>to amplify the deformation</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def surface_Image(self, scale):
+    &#34;&#34;&#34;Draws mesh deformations on reference image for each data point.
+    Parameters
+    ----------
+    scale : int
+         to amplify the deformation
+    &#34;&#34;&#34;
+    name = self.directory_Name(&#39;surface&#39;, &#39;png&#39;)
+    display_Image(self.reference_image,
+                  grid=self,
+                  scale=scale,
+                  surfColor=(255, 0, 250),
+                  file_Name=name,
+                  text=name)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="RealPi2dDIC.DIC_Run" href="#RealPi2dDIC.DIC_Run">DIC_Run</a></code></li>
+<li><code><a title="RealPi2dDIC.capture_Parameters" href="#RealPi2dDIC.capture_Parameters">capture_Parameters</a></code></li>
+<li><code><a title="RealPi2dDIC.displacement_Compute" href="#RealPi2dDIC.displacement_Compute">displacement_Compute</a></code></li>
+<li><code><a title="RealPi2dDIC.displacement_Measure" href="#RealPi2dDIC.displacement_Measure">displacement_Measure</a></code></li>
+<li><code><a title="RealPi2dDIC.display_Image" href="#RealPi2dDIC.display_Image">display_Image</a></code></li>
+<li><code><a title="RealPi2dDIC.list_Point_Final" href="#RealPi2dDIC.list_Point_Final">list_Point_Final</a></code></li>
+<li><code><a title="RealPi2dDIC.raw_Data_Process" href="#RealPi2dDIC.raw_Data_Process">raw_Data_Process</a></code></li>
+<li><code><a title="RealPi2dDIC.select_ROI" href="#RealPi2dDIC.select_ROI">select_ROI</a></code></li>
+<li><code><a title="RealPi2dDIC.surface_Generate" href="#RealPi2dDIC.surface_Generate">surface_Generate</a></code></li>
+<li><code><a title="RealPi2dDIC.write_img_data" href="#RealPi2dDIC.write_img_data">write_img_data</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="RealPi2dDIC.Plot" href="#RealPi2dDIC.Plot">Plot</a></code></h4>
+</li>
+<li>
+<h4><code><a title="RealPi2dDIC.grid" href="#RealPi2dDIC.grid">grid</a></code></h4>
+<ul class="">
+<li><code><a title="RealPi2dDIC.grid.bivariate_Interpolation" href="#RealPi2dDIC.grid.bivariate_Interpolation">bivariate_Interpolation</a></code></li>
+<li><code><a title="RealPi2dDIC.grid.correlation_Image" href="#RealPi2dDIC.grid.correlation_Image">correlation_Image</a></code></li>
+<li><code><a title="RealPi2dDIC.grid.directory_Name" href="#RealPi2dDIC.grid.directory_Name">directory_Name</a></code></li>
+<li><code><a title="RealPi2dDIC.grid.displacement_Image" href="#RealPi2dDIC.grid.displacement_Image">displacement_Image</a></code></li>
+<li><code><a title="RealPi2dDIC.grid.init_Raw_Data" href="#RealPi2dDIC.grid.init_Raw_Data">init_Raw_Data</a></code></li>
+<li><code><a title="RealPi2dDIC.grid.insitu_Plot" href="#RealPi2dDIC.grid.insitu_Plot">insitu_Plot</a></code></li>
+<li><code><a title="RealPi2dDIC.grid.raw_Data_CSV" href="#RealPi2dDIC.grid.raw_Data_CSV">raw_Data_CSV</a></code></li>
+<li><code><a title="RealPi2dDIC.grid.save_Points" href="#RealPi2dDIC.grid.save_Points">save_Points</a></code></li>
+<li><code><a title="RealPi2dDIC.grid.strain_Field_Compute" href="#RealPi2dDIC.grid.strain_Field_Compute">strain_Field_Compute</a></code></li>
+<li><code><a title="RealPi2dDIC.grid.surface_Image" href="#RealPi2dDIC.grid.surface_Image">surface_Image</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Thanks to <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.8.4</a>.</p>
+</footer>
+</body>
+</html>
