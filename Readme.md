@@ -71,7 +71,7 @@ Here a schematic diagram of a [quasi static test](https://aboutcivil.org/quasi-s
 
 ### Actual Setup
 
-![actual2](https://i.ibb.co/XZpS8s8/actual2.png)
+![actual2](https://i.ibb.co/WpBPtnB/actual12.jpg)
 
 We have attached the Pi Camera module to the MTS Testing Equipment as shown in the above picture. An external light source is used instead of the room light for better exposure only on top of the specimen and to have less environmental noise. The camera should be parallel to the plane of the specimen to get accurate results. Any out of plane motion should be avoided.
 
