@@ -4,6 +4,7 @@
 ### *A low-cost and open-source approach to in-situ 2D DIC applications*
 
 -----
+-----
 
 Digital Image Correlation (DIC) is a non-contact optical technique that can be used to monitor the shape, deformation and motion of rigid objects. Here we present *RealPi2dDIC*, a Python based open source real time DIC software, which provides a solution to the real time DIC applications using a very low-cost and mobile hardware interface. It can effectively compute in-plane full-field surface displacement and strain to sub-pixel accuracy by continuously capturing images of any rigid body in motion using a Pi camera module. This program is simple to use and can come up with highly accurate DIC results.
 
