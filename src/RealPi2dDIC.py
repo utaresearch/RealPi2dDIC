@@ -722,7 +722,7 @@ def DIC_Run(image_Path, file_Name, window_Size_px, mesh_size_px,
     f.close()
 
 
-""" This part is executed and user information is given here. """
+""" This part is executed and user information is to be given here. """
 
 while True:
     file_Name = input("Folder Name: ")
