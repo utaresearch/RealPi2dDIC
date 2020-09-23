@@ -176,13 +176,13 @@ You can fork the RealPi2dDIC repo, develop new algorithms and send us a pull req
 - Muthu Ram Prabhu Elenchezhian - *PhD Student, Aerospace Engineering, University of Texas at Arlington*
   muthuramprabhu.elenchezhian@mavs.uta.edu
 
-- Vamsee Vadlamudi - *Research Engineer II, Institute of Predictive Performance and Methodologies, University of Texas at Arlington Research Institute*
+- Vamsee Vadlamudi - *Research Engineer II, Institute of Predictive Performance Methodologies, University of Texas at Arlington Research Institute*
   vamsee.vadlamudi@uta.edu
 
-- Kenneth Reifsnider - *Founding Director, Institute of Predictive Performance and Methodologies, University of Texas at Arlington Research Institute* 
+- Kenneth Reifsnider - *Founding Director, Institute of Predictive Performance Methodologies, University of Texas at Arlington Research Institute* 
   kenneth.reifsnider@uta.edu
   
-  - Md Rassel Raihan - *Assistant Professor, Mechanical and Aerospace Engineering, University of Texas at Arlington*
+- Md Rassel Raihan - *Assistant Professor, Mechanical and Aerospace Engineering, University of Texas at Arlington*
   mdrassel.raihan@uta.edu
 
 ## Acknowledgements
