@@ -158,7 +158,7 @@ video: https://youtu.be/79wRLBrXLA4
 
 ## Documentation & Theory
 
-Documentation can be found [here](https://utaresearch.github.io/RealPi2dDIC/docs.html). The theory and algorithm of the code is explained in a journal article (to be submitted for review soon)
+Documentation can be found [here](https://utaresearch.github.io/RealPi2dDIC/docs.html). The theory and algorithm of the code is explained in a journal article (under review)
 
 ## Contributing
 
