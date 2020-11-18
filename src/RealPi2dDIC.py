@@ -44,7 +44,7 @@ camera = picamera.PiCamera()
 
 surface_grid = []  # points on surface are stored in this array
 # correlation window size (in pixels) for Lucas Kanade Method for optical
-# flow measurement
+# flow measurement # can be changed based on speckle pattern type (see documentation)
 lk_window_size = (65, 65)
 # the size in pixel of the interval (dx,dy) of the correlation grid
 lk_grid_size = (10, 10)
