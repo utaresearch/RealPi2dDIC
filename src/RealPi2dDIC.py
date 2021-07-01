@@ -11,9 +11,20 @@ To know about the operational prcedures, please read Readme.md
 This software is developed at the Institute of Predictive Performance Methodologies (IPPM), Univerisity of Texas at Arlington
 Research Institute (UTARI), Texas, USA.
 
-Authors: Partha Pratim Das [parthapratim.das@mavs.uta.edu] , Muthu Ram Prabhu Elenchezhian, Md Rassel Raihan [mdrassel.raihan@uta.edu], Vamsee Vadlamudi, Kenneth Reifsnider
+Part of this software is based on the pydic (https://gitlab.com/damien.andre/pydic) code
+developed by Damien ANDRE (Limoges University, IRCER laboratory, <damien.andre@unilim.fr>).
+In respect with the original pydic license, this code is distributed under the GNU-GPL v3
+license under the following terms.
 
-This is a free software. It can be distributed/modified under the terms of MIT Licence. See the LICENSE.md file for more details.
+This program is free software: you can redistribute it and/or modify it under the terms of
+the GNU General Public License as published by the Free Software Foundation, either version
+3 of the License, or (at your option) any later version. See the LICENSE.md file for more details.
+
+Authors: Partha Pratim Das [parthapratim.das@mavs.uta.edu] , Muthu Ram Prabhu Elenchezhian, Md Rassel Raihan [mdrassel.raihan@uta.edu], Vamsee Vadlamudi, Kenneth Reifsnider, Damien ANDRE
+
+Copyright (C) 2020 Partha Pratim Das, Muthu Ram Prabhu Elenchezhian, Md Rassel Raihan,
+Copyright (C) 2020 Vamsee Vadlamudi, Kenneth Reifsnider
+Copyright (C) 2017 Damien ANDRE
 
 Modules Dependencies:
 i. picamera
