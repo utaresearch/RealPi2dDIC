@@ -184,6 +184,8 @@ You can fork the RealPi2dDIC repo, develop new algorithms and send us a pull req
   
 - Md Rassel Raihan - *Assistant Professor, Mechanical and Aerospace Engineering, University of Texas at Arlington*
   mdrassel.raihan@uta.edu
+  
+- Damien ANDRE - Univ. Limoges, IRCER, UMR CNRS 7315, 87000 Limoges, France
 
 ## Acknowledgements
 
@@ -197,4 +199,4 @@ For any bug reporting and suggestions, please reach out to parthapratim.das@mavs
 
 ## License
 
-This software is licensed under the MIT License. See LICENSE.md for more details.
+This software is licensed under the GPLv3 License. See LICENSE.md for more details.
